@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ParminderPlayzz | Legendary Dashboard V2</title>
+  <title>ParminderPlayzz | Official Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -10,126 +10,158 @@
       --aqua: #00ffff;
       --bg: #0a0a0a;
       --glass: rgba(255, 255, 255, 0.05);
-    }* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body {
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, #000000, #1a1a1a);
   color: white;
-  height: 100%;
-  overflow-x: hidden;
 }
 
 header {
-  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background: #111;
-  box-shadow: 0 0 10px var(--neon);
-}
-header h1 {
-  color: var(--neon);
-  text-shadow: 0 0 15px var(--neon);
-  font-size: 2.5rem;
+  background: radial-gradient(circle, #1a0000, #000);
+  animation: pulse 3s infinite ease-in-out;
 }
 
-.dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+header h1 {
+  font-size: 3.5rem;
+  color: var(--neon);
+  text-shadow: 0 0 20px var(--neon);
+}
+
+.enter-btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  border: 2px solid var(--neon);
+  background: transparent;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.enter-btn:hover {
+  background: var(--neon);
+  color: black;
+  box-shadow: 0 0 10px var(--neon);
+}
+
+.main {
+  display: none;
   padding: 2rem;
 }
 
-.card {
+.section {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
   background: var(--glass);
-  backdrop-filter: blur(15px);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(255, 0, 80, 0.3);
-  transition: transform 0.3s;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(255, 0, 80, 0.2);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h2 {
+.section h2 {
   color: var(--neon);
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-}
-
-.value {
   font-size: 2rem;
-  color: var(--aqua);
+  margin-bottom: 1rem;
 }
 
 iframe {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
+  height: 300px;
   border: none;
-  margin-top: 15px;
-  height: 180px;
+  margin-top: 1rem;
 }
 
 .buttons a {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 1rem;
   margin-right: 10px;
-  padding: 10px 20px;
-  background: transparent;
-  border: 2px solid var(--aqua);
-  color: var(--aqua);
-  border-radius: 10px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  color: var(--aqua);
+  border: 2px solid var(--aqua);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
 .buttons a:hover {
   background: var(--aqua);
   color: black;
-  box-shadow: 0 0 10px var(--aqua);
+  box-shadow: 0 0 15px var(--aqua);
 }
 
 footer {
-  margin-top: 2rem;
   text-align: center;
+  padding: 2rem;
   opacity: 0.4;
-  font-size: 0.9rem;
-  padding: 10px;
+}
+
+@keyframes pulse {
+  0%, 100% { background: radial-gradient(circle, #1a0000, #000); }
+  50% { background: radial-gradient(circle, #3a0000, #000); }
 }
 
   </style>
 </head>
 <body>
-  <header>
-    <h1>🔥 ParminderPlayzz Legendary Dashboard V2</h1>
-  </header>  <section class="dashboard">
-    <div class="card">
-      <h2>👑 Subscribers</h2>
-      <div class="value" id="subs">5,470</div>
-    </div><div class="card">
-  <h2>🎥 Total Videos</h2>
-  <div class="value">148</div>
+  <header id="welcome">
+    <h1>WELCOME TO PARMINDERPLAYZZ</h1>
+    <button class="enter-btn" onclick="enterSite()">ENTER</button>
+  </header>  <div class="main" id="mainSite">
+    <div class="section">
+      <h2>🎮 Who Am I</h2>
+      <p>I am ParminderPlayzz — a Gamer and Coder who started from 0. Now I’m building my legacy playing Minecraft & Free Fire like a pro!</p>
+    </div><div class="section">
+  <h2>🔥 Games I Play</h2>
+  <ul>
+    <li>🧱 Minecraft (Bedwars, PvP, 1.20+)</li>
+    <li>🔫 Free Fire (Customs, Ranked)</li>
+  </ul>
 </div>
 
-<div class="card">
-  <h2>👀 Total Views</h2>
-  <div class="value">678,000+</div>
-</div>
-
-<div class="card">
-  <h2>📽️ Latest Video</h2>
+<div class="section">
+  <h2>🎬 Latest Video</h2>
   <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
 </div>
 
-<div class="card buttons">
-  <h2>🛠️ Quick Links</h2>
-  <a href="https://studio.youtube.com/" target="_blank">YT Studio</a>
-  <a href="https://www.youtube.com/@ParminderPlayzz_Official" target="_blank">Channel</a>
-  <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">Discord</a>
+<div class="section">
+  <h2>📢 Become a Legend Too</h2>
+  <p>If you want to become a proper YouTuber, remember:</p>
+  <ul>
+    <li>🚀 Upload daily</li>
+    <li>🔥 Stay active</li>
+    <li>🎯 Don't copy — be original</li>
+  </ul>
 </div>
 
-  </section>  <footer>
-    © 2025 ParminderPlayzz | Built with 💖 for Legends
-  </footer>
-</body>
+<div class="section buttons">
+  <h2>👑 Join the Community</h2>
+  <a href="https://www.youtube.com/@ParminderPlayzz_Official" target="_blank">📺 Subscribe</a>
+  <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">💬 Join Discord</a>
+</div>
+
+<footer>
+  Signed by ParminderPlayzz | Inspired by SenpaiSpider & GamerFleet
+</footer>
+
+  </div>  <script>
+    function enterSite() {
+      document.getElementById("welcome").style.display = "none";
+      document.getElementById("mainSite").style.display = "block";
+    }
+  </script></body>
 </html>
