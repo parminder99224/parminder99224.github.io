@@ -1,206 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ParminderPlayzz | LEGENDARY</title>
+  <meta charset="UTF-8">
+  <title>ParminderPlayzz Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
+      --bg: #0b0b0b;
+      --card: rgba(255, 255, 255, 0.05);
+      --red: #ff004f;
       --neon: #ff004f;
-      --bg1: #0f0c29;
-      --bg2: #302b63;
-      --bg3: #24243e;
-      --glass: rgba(255, 255, 255, 0.05);
+      --aqua: #00ffff;
     }
 
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
+    body {
       font-family: 'Orbitron', sans-serif;
-      color: #ffffff;
-      background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-      overflow: hidden;
-    }
-
-    .landing {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: radial-gradient(circle, #0d0d0d, #000000);
-      animation: pulse 3s infinite ease-in-out;
-    }
-
-    .landing h1 {
-      font-size: 3.8rem;
-      color: var(--neon);
-      text-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon);
-      animation: flicker 1.5s infinite alternate;
-    }
-
-    .enter-btn {
-      margin-top: 2rem;
-      padding: 15px 40px;
-      background: transparent;
+      background: var(--bg);
       color: white;
-      border: 2px solid var(--neon);
-      font-size: 1.3rem;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      padding: 20px;
     }
 
-    .enter-btn:hover {
-      background: var(--neon);
-      color: black;
-      box-shadow: 0 0 20px var(--neon);
+    h1 {
+      text-align: center;
+      color: var(--neon);
+      text-shadow: 0 0 15px var(--neon);
+      margin-bottom: 40px;
     }
 
-    .main {
-      display: none;
-      height: 100vh;
-      width: 100%;
-      overflow-y: auto;
-      background: linear-gradient(to right, #000000, #1a1a1a);
-      padding: 3rem 1rem;
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .card {
-      max-width: 800px;
-      margin: auto;
-      background: var(--glass);
-      border-radius: 20px;
-      padding: 2rem;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 0 30px rgba(255, 0, 80, 0.3);
-      animation: fadeIn 1.5s ease;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 20px rgba(255, 0, 80, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
     }
 
     .card h2 {
+      color: var(--red);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .value {
       font-size: 2rem;
-      color: var(--neon);
-      margin-bottom: 1rem;
+      color: var(--aqua);
     }
 
-    .card p, .card li {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .card ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-    }
-
-    .card ul li::before {
-      content: "🎯 ";
+    iframe {
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+      margin-top: 10px;
     }
 
     .buttons a {
       display: inline-block;
-      margin-top: 20px;
-      margin-right: 20px;
-      text-decoration: none;
-      color: #00ffff;
-      font-weight: bold;
-      border: 1px solid #00ffff;
+      margin-top: 10px;
       padding: 10px 20px;
-      border-radius: 8px;
+      background: transparent;
+      border: 2px solid var(--aqua);
+      color: var(--aqua);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
       transition: 0.3s;
     }
 
     .buttons a:hover {
-      background: #00ffff;
+      background: var(--aqua);
       color: black;
-      box-shadow: 0 0 15px #00ffff;
+      box-shadow: 0 0 10px var(--aqua);
     }
 
     footer {
-      margin-top: 2rem;
+      margin-top: 40px;
       text-align: center;
+      opacity: 0.4;
       font-size: 0.9rem;
-      opacity: 0.5;
-    }
-
-    @keyframes pulse {
-      0%, 100% { background: radial-gradient(circle, #0d0d0d, #000000); }
-      50% { background: radial-gradient(circle, #220000, #000000); }
-    }
-
-    @keyframes flicker {
-      0% { opacity: 1; }
-      50% { opacity: 0.7; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media(max-width: 600px) {
-      .landing h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio autoplay loop hidden>
-    <source src="https://files.catbox.moe/56yz6m.mp3" type="audio/mp3">
-  </audio>
+  <h1>📊 ParminderPlayzz Creator Dashboard</h1>
 
-  <!-- Landing Page -->
-  <div class="landing" id="landing">
-    <h1>WELCOME TO PARMINDERPLAYZZ</h1>
-    <button class="enter-btn" onclick="enterSite()">ENTER</button>
-  </div>
+  <div class="dashboard">
 
-  <!-- Main Content -->
-  <div class="main" id="main">
     <div class="card">
-      <h2>🔥 WHO I AM</h2>
-      <p>I am a Gamer & Coder who started from 0. Now building my gaming empire!</p>
-      <p><strong>Games I Play:</strong> Minecraft 🧱 | Free Fire 🔫 (Pro in both!)</p>
-
-      <h2>📈 How to Become a PRO YouTuber</h2>
-      <ul>
-        <li>Upload daily 🔁</li>
-        <li>Stay active 🔥</li>
-        <li>Engage with your audience 💬</li>
-        <li>Never give up 💪</li>
-      </ul>
-
-      <h2>🔗 Connect with Me</h2>
-      <div class="buttons">
-        <a href="https://www.youtube.com/@ParminderPlayzz_Official" target="_blank">🎥 Subscribe</a>
-        <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">💬 Join Discord</a>
-      </div>
-
-      <p style="margin-top: 2rem;">💡 I can become YOUR inspiration!</p>
-      <p>💥 My Inspiration: SENPAISPIDER & GAMERFLEET</p>
-      <p>🧨 I'm gonna be a LEGENDARY YouTuber soon!</p>
-      <p><em>— Signed by ParminderPlayzz</em></p>
-
-      <footer>© 2025 ParminderPlayzz | Designed for Legends</footer>
+      <h2>👑 Subscribers</h2>
+      <div class="value">5,470</div>
     </div>
+
+    <div class="card">
+      <h2>📹 Total Videos</h2>
+      <div class="value">148</div>
+    </div>
+
+    <div class="card">
+      <h2>👁️ Total Views</h2>
+      <div class="value">678,000+</div>
+    </div>
+
+    <div class="card">
+      <h2>🎬 Latest Video</h2>
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
+    </div>
+
+    <div class="card buttons">
+      <h2>⚙️ Tools</h2>
+      <a href="https://studio.youtube.com/channel/UC..." target="_blank">Open YT Studio</a>
+      <a href="https://www.youtube.com/@ParminderPlayzz_Official" target="_blank">Visit Channel</a>
+      <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">Join Discord</a>
+    </div>
+
   </div>
 
-  <script>
-    function enterSite() {
-      document.getElementById('landing').style.display = 'none';
-      document.getElementById('main').style.display = 'block';
-    }
-  </script>
+  <footer>
+    © 2025 ParminderPlayzz | Built with 🔥 by a True Legend
+  </footer>
 
 </body>
 </html>
