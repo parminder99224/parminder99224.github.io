@@ -3,183 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ParminderPlayzz Official</title>
+  <title>ParminderPlayzz | Official Site</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --red: #ff1e56;
-      --black: #0d0d0d;
-      --glass: rgba(0, 0, 0, 0.6);
-      --text: #ffffff;
-      --neon: #ff004c;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
+    /* Reset and base styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #000000 0%, #3a0000 100%);
-      color: var(--text);
-      overflow-x: hidden;
+      background: #0a0a0a;
+      color: white;
+      overflow: hidden;
     }
 
-    .section {
+    /* Landing */
+    .landing {
       height: 100vh;
       width: 100%;
+      background: radial-gradient(#1a0000, #000);
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 3rem;
       flex-direction: column;
-      transition: all 0.8s ease-in-out;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1604430356638-3c09a7aeb14d') no-repeat center center/cover;
+      text-align: center;
       position: relative;
+      animation: glowPulse 5s infinite ease-in-out;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      animation: fadeInDown 2s ease-out;
-    }
-
-    h1 {
+    .landing h1 {
       font-size: 3.5rem;
-      color: var(--neon);
-      text-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon);
-      margin-bottom: 2rem;
+      color: #ff004f;
+      text-shadow: 0 0 15px #ff004f, 0 0 30px #ff004f;
+      animation: typing 3s steps(20) 1s 1 normal both, glow 2s infinite alternate;
     }
 
-    .btn {
+    .enter-btn {
+      margin-top: 30px;
+      padding: 15px 35px;
       background: transparent;
-      border: 2px solid var(--neon);
-      padding: 15px 30px;
+      color: white;
+      border: 2px solid #ff004f;
       font-size: 1.2rem;
-      color: var(--text);
-      cursor: pointer;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: var(--neon);
-      color: #000;
-      box-shadow: 0 0 15px var(--neon);
-    }
-
-    .content {
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
       border-radius: 15px;
-      max-width: 900px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .enter-btn:hover {
+      background: #ff004f;
+      box-shadow: 0 0 10px #ff004f;
+    }
+
+    /* Main Content */
+    .main {
+      display: none;
+      height: 100vh;
+      overflow-y: scroll;
+      background: linear-gradient(to right, #1a0000, #000000);
+      padding: 50px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
       margin: auto;
-      animation: fadeInUp 1.5s ease-in;
+      box-shadow: 0 0 30px rgba(255, 0, 80, 0.3);
+      animation: fadeInUp 1s ease-in-out;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
+    .card h2 {
+      color: #ff004f;
+      margin-bottom: 20px;
     }
 
-    ul li::before {
-      content: "➤ ";
-      color: var(--neon);
+    .card p, .card li {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
-    a {
+    .links a {
       color: #00ffff;
+      margin: 10px;
+      display: inline-block;
       text-decoration: none;
-      font-weight: bold;
     }
 
     footer {
+      text-align: center;
       margin-top: 2rem;
-      font-size: 0.9rem;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Animations */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ff004f; }
+      100% { text-shadow: 0 0 25px #ff004f; }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        background: radial-gradient(circle, #1a0000, #000000);
+      }
+      50% {
+        background: radial-gradient(circle, #3a0000, #000000);
+      }
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
-      h1 {
+      .landing h1 {
         font-size: 2.2rem;
-      }
-
-      .btn {
-        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Welcome Hero Section -->
-  <section class="section hero" id="welcome">
-    <div class="hero-content">
-      <h1>WELCOME TO PARMINDER WEB</h1>
-      <button class="btn" onclick="scrollToMain()">ENTER</button>
-    </div>
-  </section>
+  <!-- Landing Section -->
+  <div class="landing" id="landing">
+    <h1>WELCOME TO PARMINDERPLAYZZ</h1>
+    <button class="enter-btn" onclick="enterSite()">ENTER</button>
+  </div>
 
-  <!-- Main Content Section -->
-  <section class="section" id="main">
-    <div class="content">
-      <h2>WELCOME</h2>
-      <p><strong>WHO I AM:</strong> I am a Gamer / Coder who makes videos and started from 0.</p>
-      <p><strong>GAMES I PLAY:</strong> Minecraft, Free Fire (I am PRO in both!)</p>
+  <!-- Main Site -->
+  <div class="main" id="mainSite">
+    <div class="card">
+      <h2>🚀 Welcome</h2>
+      <p><strong>Who I Am:</strong> I'm a Gamer/Coder who started from 0, now building a growing community!</p>
+      <p><strong>Games I Play:</strong> Minecraft, Free Fire — Pro in both!</p>
 
-      <h3>HOW TO BECOME A PROPER YOUTUBER:</h3>
+      <h3>🔥 How to Become a Real YouTuber:</h3>
       <ul>
-        <li>Make Videos</li>
-        <li>Upload Daily</li>
-        <li>Stay Active</li>
-        <li>If You Go Inactive, Your Channel Will Die</li>
+        <li>Create your own original videos</li>
+        <li>Upload daily, don't miss out!</li>
+        <li>Stay active or your channel will die</li>
+        <li>Engage with your fans on Discord & YouTube</li>
       </ul>
 
-      <p>🔥 <strong>SUBSCRIBE:</strong> PARMINDERPLAYZZ_OFFICIAL</p>
-      <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">💬 JOIN MY DISCORD</a>
-      <p>📽️ Check out my latest videos!</p>
-      <p>I CAN BECOME YOUR INSPIRATION!</p>
-      <p>My Inspiration: SENPAISPIDER & GAMERFLEET</p>
-      <p>⚡ I WILL BECOME A BIG YOUTUBER SOON!!!!!!!</p>
+      <h3>💎 Connect with Me</h3>
+      <div class="links">
+        <a href="https://www.youtube.com/@ParminderPlayzz_Official" target="_blank">🎥 Subscribe on YouTube</a>
+        <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">💬 Join Discord</a>
+      </div>
+
+      <p>I'm your future inspiration. My inspiration: SENPAISPIDER & GAMERFLEET. One day, I’ll be even BIGGER!</p>
       <p><em>— Signed by ParminderPlayzz</em></p>
 
-      <hr style="margin: 2rem 0; border-color: #ff4444;">
-
-      <p><strong>🆕 NEXT UPDATE:</strong> I AM ACTIVE NOW!</p>
-      <footer>© 2025 ParminderPlayzz — Built with Passion 💻</footer>
+      <h4>📢 Current Status: I AM ACTIVE NOW!</h4>
     </div>
-  </section>
+
+    <footer>© 2025 ParminderPlayzz | Built with 🔥 Power</footer>
+  </div>
 
   <script>
-    function scrollToMain() {
-      document.getElementById("main").scrollIntoView({ behavior: 'smooth' });
+    function enterSite() {
+      document.getElementById('landing').style.display = "none";
+      document.getElementById('mainSite').style.display = "block";
     }
   </script>
 
