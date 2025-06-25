@@ -2,268 +2,127 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>YT PARMINDERPLAYZZ_OFFICIAL</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParminderPlayzz Web</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html {
-      font-family: 'Segoe UI', sans-serif;
-      height: 100%;
-      transition: background 0.5s, color 0.5s;
-    }
-
-    /* Dark and Light mode backgrounds */
-    .dark {
-      background-color: black;
-      color: white;
-    }
-    .light {
-      background-color: white;
-      color: black;
-    }
-
-    .centered {
-      display: flex; align-items: center; justify-content: center;
-      height: 100vh; flex-direction: column; text-align: center;
-    }
-
-    .intro {
-      font-size: 2rem; animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    .enter-btn {
-      margin-top: 30px;
-      padding: 15px 30px;
-      background: #ff4757; color: white;
-      border: none; border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .enter-btn:hover { background: #e84118; }
-
-    .content {
-      display: none;
-      padding: 20px;
-      animation: fadeIn 1s;
-    }
-
-    nav {
-      display: flex; justify-content: space-between;
-      padding: 15px 20px;
-      background: rgba(0,0,0,0.7); color: white;
-      position: sticky; top: 0; z-index: 100;
-    }
-
-    nav a {
-      color: white; margin: 0 10px;
-      text-decoration: none;
-    }
-
-    .light nav {
-      background: rgba(255,255,255,0.9);
-      color: black;
-    }
-
-    .light nav a {
-      color: black;
-    }
-
-    .theme-toggle {
-      cursor: pointer; font-size: 1.1rem;
-    }
-
-    section {
-      margin: 30px 0;
-    }
-
-    .button-link {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 10px 20px;
-      background: #3742fa;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .button-link:hover {
-      background: #2f3542;
-    }
-  </style>
-</head>
-<body class="dark">
-  <!-- Welcome Page -->
-  <div id="welcome" class="centered">
-    <div class="intro">WELCOME TO PARMINDERPLAYZZ OFFICIAL WEB</div>
-    <p style="margin-top:10px;">This is for gamers: BEDWAR / 1.20+ | FREE FIRE | MUCH MORE</p>
-    <p>Don't forget to check out my new videos!</p>
-    <button class="enter-btn" onclick="enterSite()">ENTER WEBSITE</button>
-  </div>
-
-  <!-- Main Content -->
-  <div id="main-content" class="content">
-    <nav>
-      <div>
-        <a href="#home">Home</a>
-        <a href="#games">Games</a>
-        <a href="#about">About</a>
-        <a href="https://www.youtube.com/@ParminderPlayzz_OFFICIAL" target="_blank">YouTube</a>
-        <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">Discord</a>
-      </div>
-      <div class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</div>
-    </nav>
-
-    <section id="home">
-      <h2>Hi, I'm Parminder!</h2>
-      <p>I'm a passionate gamer and content creator. Welcome to my official website. I started my journey from mobile games to Minecraft Bedwars and Free Fire tournaments.</p>
-      <a class="button-link" href="https://www.youtube.com/@ParminderPlayzz_OFFICIAL?sub_confirmation=1" target="_blank">📺 SUB MY YT - CLICK TO SUB</a>
-    </section>
-
-    <section id="games">
-      <h2>🎮 Games I Play</h2>
-      <ul>
-        <li>🔥 Free Fire - Tournament and ranked matches</li>
-        <li>🛏️ Minecraft Bedwar / 1.20+ PvP</li>
-      </ul>
-    </section>
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>My name is <strong>Parminder</strong>. I love making entertaining and skillful gaming content. Thank you for visiting my official web. Don’t forget to join my Discord and subscribe!</p>
-      <a class="button-link" href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">💬 Join My Discord</a>
-    </section>
-  </div>
-
-  <script>
-    function enterSite() {
-      document.getElementById('welcome').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
-    }
-
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark');
-      body.classList.toggle('light');
-    }
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ParminderPlayzz | Official</title>
-  <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: #fff;
+      box-sizing: border-box;
     }
 
-    header {
-      background-color: #b30000;
-      padding: 1em;
-      text-align: center;
+    body {
+      background: linear-gradient(to bottom, #000000, #8B0000);
       color: white;
-    }
-
-    nav {
-      background-color: #1a1a1a;
-      padding: 0.5em;
       text-align: center;
+      min-height: 100vh;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+    .welcome-page, .main-page {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px;
     }
 
-    .container {
-      padding: 30px;
+    .welcome-page.active, .main-page.active {
+      display: flex;
     }
 
-    h2 {
-      color: #ff3333;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
     }
 
     button {
-      background-color: #ff0000;
-      color: white;
+      padding: 12px 24px;
+      font-size: 1.2rem;
       border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
-      margin: 10px 5px;
+      background: #ff0000;
+      color: white;
+      transition: transform 0.2s;
     }
 
-    a.button-link {
+    button:hover {
+      transform: scale(1.05);
+      background: #cc0000;
+    }
+
+    .main-content {
+      max-width: 700px;
+      margin-top: 30px;
+      text-align: left;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    a {
+      color: #00ffff;
       text-decoration: none;
+      display: block;
+      margin-top: 10px;
     }
 
-    ul {
-      margin-left: 20px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     footer {
-      background-color: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #cccccc;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>🎮 ParminderPlayzz Official</h1>
-    <p>Welcome to my gaming zone!</p>
-  </header>
-
-  <nav>
-    <a href="#howtoplay">How to Play</a>
-    <a href="#becomeyt">Become YouTuber</a>
-    <a href="https://www.youtube.com/@parminderplayzz_official" target="_blank">YouTube</a>
-    <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">Discord</a>
-  </nav>
-
-  <div class="container" id="howtoplay">
-    <h2>🕹️ How to Play with Parminder</h2>
-    <p>If you want to play games with me:</p>
-    <ul>
-      <li>✅ Join my <strong>Discord Server</strong> and message there</li>
-      <li>✅ Comment on my latest <strong>YouTube videos</strong> to connect</li>
-    </ul>
-    <a class="button-link" href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">
-      <button>💬 Join Discord</button>
-    </a>
-    <a class="button-link" href="https://www.youtube.com/@parminderplayzz_official" target="_blank">
-      <button>📺 Comment on YouTube</button>
-    </a>
+  <!-- Welcome Page -->
+  <div class="welcome-page active" id="welcomePage">
+    <h1>WELCOME TO PARMINDER WEB</h1>
+    <button onclick="enterSite()">ENTER</button>
   </div>
 
-  <div class="container" id="becomeyt">
-    <h2>📷 How to Become a YouTuber</h2>
-    <ul>
-      <li>🚫 <strong>Don’t copy</strong> videos or shorts from others</li>
-      <li>📅 <strong>Upload daily shorts</strong> to stay active</li>
-      <li>🎯 Make <strong>good content</strong> your audience wants to see</li>
-      <li>💡 Be creative and stay consistent!</li>
-    </ul>
+  <!-- Main Page -->
+  <div class="main-page" id="mainPage">
+    <h1>WELCOME</h1>
+    <div class="main-content">
+      <p><strong>WHO I AM:</strong> I AM A GAMER / CODER WHO MAKE VIDEOS AND STARTED FROM 0</p>
+      <p><strong>GAMES I PLAY:</strong> MINECRAFT, FREE FIRE (I AM PRO IN BOTH)</p>
+      <p><strong>HOW TO BECOME A YOUTUBER:</strong></p>
+      <ul>
+        <li>MAKE VIDEOS</li>
+        <li>UPLOAD DAILY</li>
+        <li>BE ACTIVE</li>
+        <li>IF YOU GO INACTIVE THEN CHANNEL WILL BE DEAD</li>
+      </ul>
+      <p><strong>ALSO SUBSCRIBE ON YT:</strong> PARMINDERPLAYZZ_OFFICIAL</p>
+      <a href="https://discord.gg/GfBHs6ZQ3Z" target="_blank">JOIN DISCORD</a>
+      <p><strong>CHECK OUT NEW VIDEOS!</strong></p>
+      <p>I CAN BECOME YOUR INSPIRATION</p>
+      <p><strong>MY INSPIRATIONS:</strong> SENPAISPIDER & GAMERFLEET</p>
+      <p>I CAN BECOME A BIG YOUTUBER SOON!!!!!!!</p>
+      <p><em>SIGNED BY PARMINDERPLAYZZ</em></p>
+      <hr style="margin: 20px 0; border-color: #ff4444;">
+      <p><strong>NEXT UPDATES:</strong> I AM ACTIVE NOW</p>
+    </div>
+    <footer>© 2025 ParminderPlayzz - All rights reserved</footer>
   </div>
 
-  <footer>
-    Made with ❤️ by ParminderPlayzz | © 2025
-  </footer>
-
-</body>
-</html>
+  <script>
+    function enterSite() {
+      document.getElementById('welcomePage').classList.remove('active');
+      document.getElementById('mainPage').classList.add('active');
+    }
   </script>
+
 </body>
 </html>
